@@ -4,14 +4,16 @@ using BookService.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookService.WebAPI.Migrations
 {
     [DbContext(typeof(BookServiceContext))]
-    partial class BookServiceContextModelSnapshot : ModelSnapshot
+    [Migration("20190105193130_ddd")]
+    partial class ddd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,9 +42,9 @@ namespace BookService.WebAPI.Migrations
                     b.ToTable("Author");
 
                     b.HasData(
-                        new { Id = 1, BirthDate = new DateTime(1980, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), FirstName = "James", LastName = "Sharp" },
-                        new { Id = 2, BirthDate = new DateTime(1992, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), FirstName = "Sophie", LastName = "Netty" },
-                        new { Id = 3, BirthDate = new DateTime(1996, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), FirstName = "Elisa", LastName = "Yammy" }
+                        new { Id = 1, BirthDate = new DateTime(1980, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), Created = new DateTime(2019, 1, 5, 20, 31, 30, 634, DateTimeKind.Local), FirstName = "James", LastName = "Sharp" },
+                        new { Id = 2, BirthDate = new DateTime(1992, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), Created = new DateTime(2019, 1, 5, 20, 31, 30, 634, DateTimeKind.Local), FirstName = "Sophie", LastName = "Netty" },
+                        new { Id = 3, BirthDate = new DateTime(1996, 8, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), Created = new DateTime(2019, 1, 5, 20, 31, 30, 634, DateTimeKind.Local), FirstName = "Elisa", LastName = "Yammy" }
                     );
                 });
 
@@ -110,8 +112,8 @@ namespace BookService.WebAPI.Migrations
                     b.ToTable("Publisher");
 
                     b.HasData(
-                        new { Id = 1, Country = "UK", Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), Name = "IT-publishers" },
-                        new { Id = 2, Country = "Sweden", Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), Name = "FoodBooks" }
+                        new { Id = 1, Country = "UK", Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), Name = "IT-publishers" },
+                        new { Id = 2, Country = "Sweden", Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), Name = "FoodBooks" }
                     );
                 });
 
@@ -140,10 +142,10 @@ namespace BookService.WebAPI.Migrations
                     b.ToTable("Rating");
 
                     b.HasData(
-                        new { Id = 2, BookId = 2, Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), ReaderId = 3, Score = 4 },
-                        new { Id = 3, BookId = 3, Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), ReaderId = 1, Score = 1 },
-                        new { Id = 4, BookId = 3, Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), ReaderId = 3, Score = 3 },
-                        new { Id = 5, BookId = 1, Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), ReaderId = 1, Score = 5 }
+                        new { Id = 2, BookId = 2, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), ReaderId = 3, Score = 4 },
+                        new { Id = 3, BookId = 3, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), ReaderId = 1, Score = 1 },
+                        new { Id = 4, BookId = 3, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), ReaderId = 3, Score = 3 },
+                        new { Id = 5, BookId = 1, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), ReaderId = 1, Score = 5 }
                     );
                 });
 
@@ -166,9 +168,9 @@ namespace BookService.WebAPI.Migrations
                     b.ToTable("Reader");
 
                     b.HasData(
-                        new { Id = 1, Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), FirstName = "Ruthje", Lastname = "VanderBeken" },
-                        new { Id = 2, Created = new DateTime(2019, 1, 5, 20, 31, 30, 636, DateTimeKind.Local), FirstName = "Noëlla", Lastname = "Snauwaert" },
-                        new { Id = 3, Created = new DateTime(2019, 1, 5, 20, 31, 30, 637, DateTimeKind.Local), FirstName = "Bart", Lastname = "Sompsin" }
+                        new { Id = 1, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), FirstName = "Ruthje", Lastname = "VanderBeken" },
+                        new { Id = 2, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), FirstName = "Noëlla", Lastname = "Snauwaert" },
+                        new { Id = 3, Created = new DateTime(2019, 1, 5, 20, 31, 30, 635, DateTimeKind.Local), FirstName = "Bart", Lastname = "Sompsin" }
                     );
                 });
 

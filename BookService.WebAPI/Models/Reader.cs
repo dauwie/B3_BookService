@@ -9,6 +9,7 @@ namespace BookService.WebAPI.Models
     {
         public string FirstName { get; set; }
         public string Lastname { get; set; }
+        public ICollection<Rating> Ratings { get; set; }
 
     }
 }
