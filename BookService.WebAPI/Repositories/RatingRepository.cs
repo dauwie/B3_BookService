@@ -15,9 +15,9 @@ namespace BookService.WebAPI.Repositories
 
         }
 
-        public override IQueryable<Rating> GetAll()
+       public async Task<List<Rating>> GetAllInclusive()
         {
-            return db.Ratings.Include(r => r.Reader).Include(r => r.Book).AsNoTracking();
+            return await GetAll().Include(r => r.Book).Include(r => r.Reader).ToListAsync();
         }
     }
 }

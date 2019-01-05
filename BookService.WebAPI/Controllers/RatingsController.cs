@@ -20,6 +20,9 @@ namespace BookService.WebAPI.Controllers
         }
 
         [HttpGet]
-        public override IActionResult 
+        public override async Task<IActionResult> Get()
+        {
+            return Ok(await repository.GetAllInclusive());
+        }
     }
 }
