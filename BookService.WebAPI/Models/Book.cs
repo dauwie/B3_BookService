@@ -15,5 +15,8 @@ namespace BookService.WebAPI.Models
         public int PublisherId { get; set; }
         public Publisher Publisher { get; set; }
         public string FileName { get; set; }
-    }
+        public IEnumerable<Reader> { get; set; }
+        public int RatingId { get; set; }
+        public Rating Rating { get; set; }
+}
 }
