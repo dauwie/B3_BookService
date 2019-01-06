@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BookService.WebAPI.Repositories;
 using BookService.WebAPI.Models;
-
+using Newtonsoft.Json;
 
 namespace BookService.WebAPI.Controllers
 {
@@ -19,10 +19,26 @@ namespace BookService.WebAPI.Controllers
 
         }
 
-        [HttpGet]
-        public override async Task<IActionResult> Get()
-        {
-            return Ok(await repository.GetAllInclusive());
-        }
+        //[HttpGet]
+        //public override async Task<IActionResult> Get()
+        //{
+        //    return Ok(await repository.GetAllInclusive());
+        //}
+
+        /*Om een selfreferencing loop te vermijden OPTIE 1 */
+       // GET: api/Ratings
+       [HttpGet]
+       public override async Task<IActionResult> Get()
+       {
+
+           var settings = new JsonSerializerSettings
+           {
+               ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+           };
+           return Ok(JsonConvert.SerializeObject(await repository.GetAllInclusive(),settings));
+       }
+       
+
+
     }
 }

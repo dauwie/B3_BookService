@@ -38,6 +38,12 @@ namespace BookService.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            //AutoMapper.Mapper.Initialize(
+                
+            //    cfg =>
+            //    {
+            //        cfg.CreateMap<Models.Book>, DTO.BookBasic>().For
+            //    })
 
             app.UseMvc();
         }
