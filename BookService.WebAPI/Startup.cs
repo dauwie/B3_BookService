@@ -23,6 +23,7 @@ namespace BookService.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             var config = new AutoMapper.MapperConfiguration( cfg => { cfg.AddProfile(new AutMapperProfileConfiguration()); });
+           // var config = new AutoMapper.MapperConfiguration()
             var mapperke = config.CreateMapper();
             services.AddSingleton(mapperke);
             services.AddDbContext<BookServiceContext>(options =>
